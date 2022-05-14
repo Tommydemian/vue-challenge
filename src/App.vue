@@ -1,7 +1,9 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/faq">Faq</router-link> |
+    <router-link to="/countries">Countries</router-link> |
   </nav>
   <router-view/>
 </template>
@@ -15,16 +17,19 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+
+:root{
+  --primary-clr:#ffffff;
+  --alternate-text-clr: #000000;
+  --secondary-clr:#14213d;
+  --accent-clr: #fca311; 
+  --accent-clr-pseudo: #efac3f;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
