@@ -1,0 +1,122 @@
+<template>
+    <form @submit.prevent="handleSubmit" >
+      <label>Email:</label>
+        <input
+        type="email"
+        placeholder="Enter your email please..."
+        required
+        maxlength="25"
+        v-model="emailValue"
+        @blur="handleFocus"
+      />
+    <Span
+      message="Not valid email direction"
+      v-if="focused"
+     />
+    
+    <label>Number:</label>
+      <input
+        type="number"
+        placeholder="Enter a number beetwen 4 and 7 please, it should be an integer"
+        required
+        max="7"
+        min="4"
+        maxlength="1"
+        v-model="selectedNumber"
+        @blur="handleFocus"
+       />
+    <Span 
+      message="Not valid due to requirements: only one integer, between 4 and 7"
+      v-if="focused"
+     />
+    
+    <label>Code</label>
+      <input 
+        type="text"
+        placeholder="enter a code using only vowels and numbers"
+        required
+        maxlength="5"
+        minlength="1"
+        pattern="^[aeiuo]+$^[0-9]*$"
+        v-model="codeValue"
+        @blur="handleFocus"
+       />
+    <Span 
+      message="You should only enter vowels and numbers" 
+      v-if="focused"
+     />
+      <button>
+      Submit
+      </button>
+
+    </form>
+    </template>
+
+<script lang="ts" >
+import {defineComponent} from 'vue'
+import Span from './WarningSpan.vue';
+
+export default defineComponent({
+  name: 'InputValidations',
+  data() {
+    return {
+      emailValue: '' as string, 
+      selectedNumber: 0 as number,
+      codeValue: '' as string | number, 
+      focused: false as boolean
+    }
+  }, 
+  methods:{
+      handleFocus() {
+          this.focused = true;
+      }
+  },
+  components: {
+    Span
+  }
+})
+</script>
+
+<style scoped>
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: .5em;
+  width: 30%;
+  margin: 2em auto;
+  padding: 2em;
+  border: 1px solid black;
+  border-radius:6px;
+}
+input {
+    width: 80%;
+    margin: ;
+    padding: .5em
+}
+ 
+.submit-btn {
+  cursor: pointer;
+  margin-top: .5em;
+  padding: .5em;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--accent-clr)
+}
+.submit-btn:hover {
+  background-color: var(--accent-clr-pseudo)  
+}
+
+span {
+  color: red;
+  display: none;
+  font-weight: 600;
+}
+
+input:invalid ~ span{
+  display: block
+}
+
+</style>
