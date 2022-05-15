@@ -1,8 +1,8 @@
 <template>
   <section> 
-    <div class="faq-container">
-      <div class="question">{{faq.question}} <PlusIcon class="faq-icon" /></div>
-      <div class="question-reply">{{faq.answer}}</div>
+    <div class="faq-container"> 
+      <div class="question">{{faq.question}} <PlusIcon class="faq-icon" @click="faq.open = !faq.open" /></div>
+      <div v-show="faq.open" class="question-reply">{{faq.answer}}</div>
     </div>
   </section>
 </template>
@@ -26,10 +26,6 @@ export default defineComponent({
         type: Object as PropType<Faq>,
         required: true
       },
-      index: {
-        type: Number as PropType<Number>
-      },  
-
     }
 })
 </script>
@@ -41,8 +37,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 3em;
-  border: 1px solid black
+  margin-top: 3em;  
 }
 
 .faq-container {
@@ -50,20 +45,22 @@ section {
     flex-direction: column;
     row-gap: 1em;
     width: 60%;
-    outline: 1px solid red;
     padding: 1em;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color:var(--bg-clr-100);
+    border-radius:6px;
 
 }
 
 .question {
-  border: 1px solid black;
+  border: 1px solid var(--bg-clr-200);
   position: relative;
   font-size: 1.5rem;
   color: var(--bg-clr-300);
   transition: all 0.5s linear;
   display: flex;
   align-items: center;
+  padding: 0.5em;
+  border-radius: 6px;
 
 }
 
@@ -72,13 +69,13 @@ section {
   height: 1em;
   position: absolute;
   right: .5em;
+  cursor: pointer;
 }
 
 .question-reply {
   font-size: 1rem;
   overflow-y: hidden;
   transition: all 0.5s ;
-  display: none;
 }
 
 

@@ -1,5 +1,8 @@
 <template>
-    <h1>This is the Faq page</h1>
+    <div class="header-container">
+      <h1>FAQ's</h1>
+      <h2>Frequently asked questions.</h2>
+    </div>
     <Accordion
       v-for="(faq, i) in faqs" 
       :key="faq.id"
@@ -54,3 +57,12 @@ export default defineComponent({
         },
     });
 </script>
+
+<style>
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+</style>
