@@ -54,7 +54,7 @@
     </template>
 
 <script lang="ts" >
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 import Span from './WarningSpan.vue';
 import Button from './Button.vue';
 
