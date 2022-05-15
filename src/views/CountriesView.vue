@@ -12,11 +12,13 @@
 import { defineComponent } from 'vue'
 import axios from 'axios';
 
+import Countries from '../types/countries.interface';
+
 export default defineComponent({
     name: 'CountriesView',
     data() {
       return{
-        countries : [] as Array<String | Number>
+        countries : [] as Array<Countries>
       }
     },
      async mounted() {

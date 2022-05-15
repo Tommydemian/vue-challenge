@@ -58,6 +58,8 @@ import { defineComponent } from 'vue'
 import Span from './WarningSpan.vue';
 import Button from './Button.vue';
 
+import Countries from '../types/countries.interface';
+
 export default defineComponent({
   name: 'InputValidations',
   data() {
