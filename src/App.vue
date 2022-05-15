@@ -30,8 +30,9 @@ export default{
   --primary-clr:#ffffff;
   --alternate-text-clr: #000000;
   --secondary-clr:#14213d;
-  --bg-clr:#e5e5e5;
-  --bg-clr-darker: #9f9ea6;
+  --bg-clr-100:#e5e5e5;
+  --bg-clr-200: #9f9ea6;
+  --bg-clr-300: #49494e;
   --accent-clr: #fca311; 
   --accent-clr-pseudo: #efac3f;
 }

@@ -60,14 +60,14 @@ export default defineComponent({
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   font-size:1rem;
   padding: .5em 1em;
-  background-color: var(--bg-clr);
+  background-color: var(--bg-clr-100);
   border: none;  
 }
 .dropdown:focus,
 .dropdown:active,
 .dropdown:target,
 .dropdown:visited{
-  outline: 1px solid var(--bg-clr-darker);
+  outline: 1px solid var(--bg-clr-200);
 
 }
 
