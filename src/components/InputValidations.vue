@@ -7,11 +7,11 @@
         required
         maxlength="25"
         v-model="emailValue"
-        @blur="handleFocus"
+        @blur="handleEmailFocus"
       />
     <Span
       message="Not valid email direction"
-      v-if="focused"
+      v-if="emailfocused"
      />
     
     <label>Number:</label>
@@ -23,11 +23,11 @@
         min="4"
         maxlength="1"
         v-model="selectedNumber"
-        @blur="handleFocus"
+        @blur="handleNumberFocus"
        />
     <Span 
       message="Not valid due to requirements: only one integer, between 4 and 7"
-      v-if="focused"
+      v-if="numberfocused"
      />
     
     <label>Code</label>
@@ -37,13 +37,13 @@
         required
         maxlength="5"
         minlength="1"
-        pattern="^[aeiuo]+$^[0-9]*$"
+        pattern="^([aeiouy0-9]*[^zrtpqsdfghjklmwxcvbn \r\n])$"
         v-model="codeValue"
-        @blur="handleFocus"
+        @blur="handleCodeFocus"
        />
     <Span 
       message="You should only enter vowels and numbers" 
-      v-if="focused"
+      v-if="codefocused"
      />
       <button>
       Submit
@@ -63,12 +63,23 @@ export default defineComponent({
       emailValue: '' as string, 
       selectedNumber: 0 as number,
       codeValue: '' as string | number, 
-      focused: false as boolean
+      emailfocused: false as boolean,
+      numberfocused: false as boolean,
+      codefocused: false as boolean
     }
   }, 
   methods:{
-      handleFocus() {
-          this.focused = true;
+      handleEmailFocus() {
+          this.emailfocused = true;
+      },
+      handleNumberFocus() {
+          this.numberfocused = true;
+      },
+      handleCodeFocus() {
+          this.codefocused = true;
+      },
+      handleSubmit(){
+        console.info('submitted')
       }
   },
   components: {
@@ -92,7 +103,6 @@ form {
 }
 input {
     width: 80%;
-    margin: ;
     padding: .5em
 }
  
