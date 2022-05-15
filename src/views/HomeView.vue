@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-   <InputValid /> 
+   <InputValidations /> 
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import InputValid from '../components/InputValid.vue';
+import InputValidations from '../components/InputValidations.vue';
 
 export default defineComponent({
   name: 'HomeView',
   components:{
-    InputValid
+    InputValidations
   }
 });
 </script>
