@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import InputValidations from '@/components/InputValidations.vue';
+import InputValidations from '../components/InputValidations.vue';
 
 export default defineComponent({
   name: 'HomeView',
