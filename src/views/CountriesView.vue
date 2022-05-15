@@ -1,10 +1,11 @@
 <template>
-   <h1>This is the countries page</h1>
+   <div class="dropdown-container">
      <select class="dropdown">
     <option :key="country.code" v-for="country in countries">
     <span>({{country.code}})</span> {{country.name}}
     </option>
     </select>
+    </div>
 </template>
 
 <script lang="ts">
@@ -28,7 +29,19 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.dropdown-container {
+  display: flex;
+  justify-content:center;
+  align-items:center;  
+  margin: 5em;
+}
 .dropdown{
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    font-size:1rem;
+    padding: .5em 1em;
+    background-color: var(--bg-clr);
+    border: none;
+
     
 }
 </style>
