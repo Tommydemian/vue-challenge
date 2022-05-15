@@ -3,13 +3,13 @@
 ## Instrucciones para correr este repositorio:
 ---
 
-- 1. Clonar el repositorio en su computadora.
+- Clonar el repositorio en su computadora.
 
-- 2. Ingresar al directorio/ carpeta challenge desde la consola y ejectuar el comando **npm i**.
+- Ingresar al directorio/ carpeta challenge desde la consola y ejectuar el comando **npm i**.
 
-- 3. Ingrese el comando **npm run serve**.
+- Ingrese el comando **npm run serve**.
 
-- 4. Dirigirse a [http://localhost:8080]() que es donde se iniciará la aplicación.
+- Dirigirse a [http://localhost:8080]() que es donde se iniciará la aplicación.
 
 ## Descripción:
 ---
