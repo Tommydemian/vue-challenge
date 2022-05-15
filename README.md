@@ -1,16 +1,22 @@
-# challenge
+### Challenge
 
 ## Instrucciones para correr este repositorio:
+---
 
-1. Clonar el repositorio en su computadora.
+- 1. Clonar el repositorio en su computadora.
 
-2. Ingresar al directorio vueChallenge desde la consola.
+- 2. Ingresar al directorio/ carpeta challenge desde la consola y ejectuar el comando **npm i**.
 
-3. Ingresar al directorio challenge.
+- 3. Ingrese el comando **npm run serve**.
 
-4. Ingrese el comando **npm run serve**.
+- 4. Dirigirse a [http://localhost:8080]() que es donde se iniciará la aplicación.
 
-5. Dirigirse a [http://localhost:8080] que es donde se inicia la aplicación.
+## Descripción:
+---
+- Se trata de una breve página web que cuenta con 3 vistas principales, en la home (`landing page`) se pueden observar 3 inputs con *real-time validations* hechos sin plugins, utilizando la OPTIONS API y el v-model para generar el doble bind. La razón por la cual se uso la OPTIONS API y no la COMPOSITION API es debido a la velocidad de respuesta frente al evento blur.
+ 
+- En la ruta /countries se despliega un dropdown (`select element`) con todos los paises, anteponiendo su codigo => data consunmida de un endPoint.
+ 
+- La ultima ruta disponible /faq contiene un componente titulado Accordion que maneja Props y togglea bloques de respuestas. 
 
-## Característ: 
-El proyecto cuenta con 
+Dev: Tomas Gil Amoedo 
