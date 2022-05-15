@@ -1,7 +1,10 @@
 <template>
    <div class="dropdown-container">
      <select class="dropdown">
-    <option v-for="{code, name} in countries" :key="code" > <!-- destructure code and name from the Array -->
+    <option
+      class="dropdwown__content" 
+      v-for="{code, name} in state.countries"
+      :key="code" > <!-- destructure code and name from the Array -->
     <span>({{code}})</span> {{name}}
     </option>
     </select>
@@ -9,24 +12,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted, reactive } from 'vue'
 import axios from 'axios';
 
 import Countries from '../types/countries.interface';
 
 export default defineComponent({
     name: 'CountriesView',
-    data() {
-      return{
-        countries : [] as Array<Countries>
-      }
+    setup() {
+
+        const state = reactive({
+          countries: [] as Countries[]
+        })
+      
+        onMounted(async () => {
+          const {data} = await axios.get('https://gist.githubusercontent.com/anubhavshrimal/75f6183458db8c453306f93521e93d37/raw/f77e7598a8503f1f70528ae1cbf9f66755698a16/CountryCodes.json')
+           state.countries = data
+        })
+
+       return {state}
+      
     },
-     async mounted() {
-     const {data} = await axios.get('https://gist.githubusercontent.com/anubhavshrimal/75f6183458db8c453306f93521e93d37/raw/f77e7598a8503f1f70528ae1cbf9f66755698a16/CountryCodes.json')
-     this.countries = data
-     console.info(this.countries)
-        
-    }
 })
 </script>
 
@@ -42,8 +48,6 @@ export default defineComponent({
     font-size:1rem;
     padding: .5em 1em;
     background-color: var(--bg-clr);
-    border: none;
-
-    
+    border: none;  
 }
 </style>

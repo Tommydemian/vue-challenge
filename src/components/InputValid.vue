@@ -50,6 +50,8 @@
      />
       <Button
       type="submit"
+      class="sub-btn"
+      :disabled="email.length === 0"
        btnText="Show Results" />
     </form>
 
@@ -133,6 +135,11 @@ input {
 }
 .submit-btn:hover {
   background-color: var(--accent-clr-pseudo)  
+}
+
+.sub-btn:disabled {
+    background-color: var(--bg-clr-darker);
+    color: var(--bg-clr);
 }
 
 span {
