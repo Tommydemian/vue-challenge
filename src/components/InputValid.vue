@@ -12,7 +12,7 @@
       />
     <Span
       message="Not valid email direction"
-      v-if="focusedrefs.emailfocused"
+      v-if="emailfocused"
      />
     
     <label>Number:</label>
@@ -29,7 +29,7 @@
        />
     <Span 
       message="Not valid due to requirements: only one integer, between 4 and 7"
-      v-if="focusedrefs.numberfocused"
+      v-if="numberfocused"
      />
     
     <label>Code:</label>
@@ -46,7 +46,7 @@
        />
     <Span 
       message="You should only enter vowels and numbers" 
-      v-if="focusedrefs.codefocused"
+      v-if="codefocused"
      />
       <Button
       type="submit"
@@ -67,23 +67,26 @@ export default defineComponent({
     const email = ref<string>('')
     const number = ref<number>(0)
     const code = ref<String | Number>('')
-     const focusedrefs = ref({
-        emailfocused: false,
-        numberfocused: false,
-        codefocused: false
-  }) 
+    const emailfocused = false
+    const numberfocused = false
+    const codefocused = false
+    /*  const focusedrefs = ref(
+        {emailfocused: false},
+        {numberfocused: false},
+        {codefocused: false}
+    ) */ 
     const results = ref(false)
-    return {email, number, code, focusedrefs, results}
+    return {email, number, code, emailfocused, numberfocused, codefocused, results}
   }, 
   methods:{
       handleEmailFocus() {
-          this.focusedrefs.emailfocused = true;
+          this.emailfocused = true;
       },
       handleNumberFocus() {
-          this.focusedrefs.numberfocused = true;
+          this.numberfocused = true;
       },
       handleCodeFocus() {
-          this.focusedrefs.codefocused = true;
+          this.codefocused = true;
       },
       handleSubmit(){
         this.results = true
