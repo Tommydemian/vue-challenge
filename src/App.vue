@@ -2,7 +2,7 @@
   <nav class="navigation">
     <router-link class="link" to="/">Home <HomeIcon class="nav-icon"/></router-link>  |
     <router-link class="link" to="/faq">Faq <FaqIcon class="nav-icon"/></router-link>  |
-    <router-link class="link" to="/countries">Countries</router-link> |
+    <router-link class="link" to="/countries">Countries <FlagIcon class="nav-icon"/></router-link> |
   </nav>
   <router-view/>
 </template>
@@ -10,13 +10,15 @@
 <script>
 import HomeIcon from './assets/icons/HomeIcon.vue';
 import FaqIcon from './assets/icons/FaqIcon.vue';
+import FlagIcon from './assets/icons/FlagIcon.vue';
 
 
 export default{
   name: 'App',
   components: {
     HomeIcon,
-    FaqIcon
+    FaqIcon,
+    FlagIcon
   }
 
 }
@@ -28,6 +30,7 @@ export default{
   --primary-clr:#ffffff;
   --alternate-text-clr: #000000;
   --secondary-clr:#14213d;
+  --bg-clr:#e5e5e5;
   --accent-clr: #fca311; 
   --accent-clr-pseudo: #efac3f;
 }
