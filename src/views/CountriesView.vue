@@ -1,4 +1,5 @@
 <template>
+    <h1 class="header" >{{state.title}}</h1>
    <div class="dropdown-container">
      <select 
        v-cloak
@@ -24,7 +25,8 @@ export default defineComponent({
     setup() {
 
         const state = reactive({
-          countries: [] as Countries[]
+          countries: [] as Countries[],
+          title: 'Select your Country :' as string 
         });
       
         onMounted(async () => {
@@ -39,6 +41,15 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
+.header {
+  text-align: center;
+  margin-top:1em;
+  font-size: 1.5rem;
+  text-decoration: underline;
+
+
+}
 .dropdown-container {
   display: flex;
   justify-content:center;
@@ -46,11 +57,18 @@ export default defineComponent({
   margin: 5em;
 }
 .dropdown{
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    font-size:1rem;
-    padding: .5em 1em;
-    background-color: var(--bg-clr);
-    border: none;  
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  font-size:1rem;
+  padding: .5em 1em;
+  background-color: var(--bg-clr);
+  border: none;  
+}
+.dropdown:focus,
+.dropdown:active,
+.dropdown:target,
+.dropdown:visited{
+  outline: 1px solid var(--bg-clr-darker);
+
 }
 
 [v-cloak]{

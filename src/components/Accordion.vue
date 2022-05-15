@@ -1,12 +1,8 @@
 <template>
   <section> 
     <div class="container">
-      <div class="question-box">
-        <h3>Test <PlusIcon class="accordion__icon" /> <MinusIcon class="accordion__icon" /> </h3>
-          <div class="question-reply">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores modi suscipit, expedita perferendis quos accusantium delectus eum magnam.</p>
-         </div>
-      </div>
+      <div class="question">{{faq.question}}</div>
+      <div class="question-reply">{{faq.answer}}</div>
     </div>
   </section>
 </template>
@@ -23,9 +19,7 @@ export default defineComponent({
       PlusIcon,
       MinusIcon  
     },
-    setup() {
-        
-    },
+    props: [faq]
 })
 </script>
 

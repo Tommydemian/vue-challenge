@@ -19,7 +19,7 @@ export default{
     HomeIcon,
     FaqIcon,
     FlagIcon
-  }
+  },
 
 }
 </script>
