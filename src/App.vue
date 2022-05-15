@@ -68,4 +68,10 @@ export default{
 
 }
 
+nav a.router-link-exact-active {
+  color: var(--accent-clr);
+  font-weight: bold;
+  font-size:1.2rem
+}
+
 </style>
