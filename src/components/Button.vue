@@ -23,6 +23,7 @@ export default defineComponent({
   border-radius:6px;
   padding: 1em 1.5em; 
   margin:1em;
+  font-size:1rem;
   color: var(--alternate-text-clr);
   background-color: var(--accent-clr);
 }

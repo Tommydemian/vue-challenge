@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-   <h1>Welcome to Your Vue.js + TypeScript App</h1>
    <InputValidations /> 
   </div>
 </template>

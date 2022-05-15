@@ -3,7 +3,7 @@
       <label>Email:</label>
         <input
         type="email"
-        placeholder="Enter your email please..."
+        placeholder="Enter your email direction"
         required
         maxlength="25"
         v-model="emailValue"
@@ -30,10 +30,10 @@
       v-if="numberfocused"
      />
     
-    <label>Code</label>
+    <label>Code:</label>
       <input 
         type="text"
-        placeholder="enter a code using only vowels and numbers"
+        placeholder="enter a code using only vowels and numbers..."
         required
         maxlength="5"
         minlength="1"
@@ -45,10 +45,12 @@
       message="You should only enter vowels and numbers" 
       v-if="codefocused"
      />
-      <Button btnText="Submit" />
+      <Button
+      type="submit"
+       btnText="Show Results" />
     </form>
 
-    <h3>your email is {{emailValue}}, you selected the number {{selectedNumber}} and your code is {{codeValue}}</h3>
+    <h3 v-if="results" class="results" >your email is {{emailValue}}, you selected the number {{selectedNumber}} and your code is {{codeValue}}</h3>
     </template>
 
 <script lang="ts" >
@@ -65,7 +67,8 @@ export default defineComponent({
       codeValue: '' as string | number, 
       emailfocused: false as boolean,
       numberfocused: false as boolean,
-      codefocused: false as boolean
+      codefocused: false as boolean,
+      results: false
     }
   }, 
   methods:{
@@ -79,7 +82,7 @@ export default defineComponent({
           this.codefocused = true;
       },
       handleSubmit(){
-        console.info('submitted')
+        this.results = true
       }
   },
   components: {
@@ -101,6 +104,9 @@ form {
   padding: 2em;
   border: 1px solid black;
   border-radius:6px;
+}
+label {
+  font-weight: 600;
 }
 input {
     width: 80%;
@@ -129,5 +135,12 @@ span {
 input:invalid ~ span{
   display: block
 }
+
+.results{
+  text-align: center;
+  font-weight: 400;
+}
+
+
 
 </style>
