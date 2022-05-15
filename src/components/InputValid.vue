@@ -76,11 +76,13 @@ export default defineComponent({
         {codefocused: false}
     ) */ 
     const results = ref(false)
+
     return {email, number, code, emailfocused, numberfocused, codefocused, results}
   }, 
   methods:{
       handleEmailFocus() {
           this.emailfocused = true;
+          console.info('blured')
       },
       handleNumberFocus() {
           this.numberfocused = true;
