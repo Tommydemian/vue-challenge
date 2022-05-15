@@ -1,8 +1,8 @@
 <template>
    <div class="dropdown-container">
      <select class="dropdown">
-    <option :key="country.code" v-for="country in countries">
-    <span>({{country.code}})</span> {{country.name}}
+    <option v-for="{code, name} in countries" :key="code" > <!-- destructure code and name from the Array -->
+    <span>({{code}})</span> {{name}}
     </option>
     </select>
     </div>

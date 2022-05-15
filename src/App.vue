@@ -53,6 +53,7 @@ export default{
   align-items: center;
   color: var(--primary-clr);
   transition:all 0.5s;
+  font-size:1.1rem
 }
 
 .link:hover {
