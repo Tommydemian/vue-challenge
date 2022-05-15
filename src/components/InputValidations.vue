@@ -45,16 +45,16 @@
       message="You should only enter vowels and numbers" 
       v-if="codefocused"
      />
-      <button>
-      Submit
-      </button>
-
+      <Button btnText="Submit" />
     </form>
+
+    <h3>your email is {{emailValue}}, you selected the number {{selectedNumber}} and your code is {{codeValue}}</h3>
     </template>
 
 <script lang="ts" >
 import {defineComponent} from 'vue'
 import Span from './WarningSpan.vue';
+import Button from './Button.vue';
 
 export default defineComponent({
   name: 'InputValidations',
@@ -83,7 +83,8 @@ export default defineComponent({
       }
   },
   components: {
-    Span
+    Span,
+    Button
   }
 })
 </script>
